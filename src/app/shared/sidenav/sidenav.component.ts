@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServices } from 'src/app/Services/api.service';
-
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -16,10 +16,10 @@ export class SidenavComponent implements OnInit {
   catagories_id: any;
   profile: any;
   _id: any;
-  show: boolean = true;
- 
+  newItemEvent = new EventEmitter<string>();
 
-  constructor(private apiService: ApiServices) { }
+  constructor(private apiService: ApiServices) {this.getAllcategories()
+  }
 
   ngOnInit(): void {
  
@@ -27,12 +27,17 @@ export class SidenavComponent implements OnInit {
  
   
   }
-   
+
   getAllcategories(){
     this.apiService.get('category').subscribe( (res:any) => {
       console.log(res);
       this.catagories = res.data;
-      this.show = true;
+
+      for(let i in res.data){
+        this._id = res.data[i]._id;
+        console.log(this._id);
+      }
+      console.log(this._id);
       //  this.catagories.forEach((element: any) => {
         
       //   this.profile = element.subcategories;
@@ -51,18 +56,21 @@ export class SidenavComponent implements OnInit {
       //     console.log(res.data[i]._id)
       //   }
       // }
+      this.getAllsubcategories(this._id)
       console.log(this.catagories)
     }, err => {
       this.catagories = [];
-    }
-    );
+    });
+    return  this.getAllsubcategories(this._id);
   }
 
-  getAllsubcategories(id: any){
-    this.apiService.get('category/' + id).subscribe( (res:any)=> {
-      console.log(res);
-      this.subcategory = res.data;
+  getAllsubcategories(_id: any){
+//  console.log(_id)
+    this.apiService.get(`category/${_id}`).subscribe( (res:any)=> {
+      // console.log(_id);
+      this.subcategory = res.data.subcategories;
 
+      console.log(this.subcategory);
     });
   }
 }

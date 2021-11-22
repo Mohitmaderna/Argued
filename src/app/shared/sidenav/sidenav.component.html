@@ -1,3 +1,5 @@
+<div class="loader"></div>
+
 <div class="home_background">
     <div class="container-fluid">
        <div class="row">
@@ -8,34 +10,38 @@
                       <ul class="dropdown-menu top scrollbar" id="style-2"  aria-labelledby="navbarDropdown" style="overflow-y: Scroll !important; overflow-x: hidden;height: 100vh;display:block;">
                          <div class="force-overflow">
                           
-                        <li class="dropdown" *ngFor="let pics of catagories"  >
-                            <a class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false" >
-                               <div class="" bis_skin_checked="1">
-                                  <img src="{{pics.profilePic }}" class="">
-                                  <div class="title_name">
-                                     <p>{{pics.name}}</p>
-                                  </div>
-                               </div>
-                            </a>
-                            <ul class="dropdown-menu newclass sub scrollbar" id="style-2" aria-labelledby="navbarDropdown" *ngIf="show">
-                               <div class="force-overflow"> 
-                               <li >
-                                  <img src="https://argueds3.s3.amazonaws.com/subcategory/1595998425731.PNG" class="w-100">
-                                  <div class="title_namess">
-                                     <p>hduhke</p>
-                                  </div>
-                               </li>
-                               
-                               <!-- <li>
-                                  <img src="https://argueds3.s3.amazonaws.com/subcategory/1595998425731.PNG" class="w-100">
-                                  <div class="title_namess">
-                                     <p>Sub title 2</p>
-                                  </div>
-                               </li>
-                              -->
-                            </div>
-                            </ul>
-                        </li>
+                            <li class="dropdown" *ngFor="let pics of catagories" (click) = "getAllsubcategories($event)">
+                                <a class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                   <div class="" bis_skin_checked="1">
+                                      <img src="{{pics.profilePic}}" class="">
+                                      <div class="title_name">
+                                         <p>{{pics.name}}</p>
+                                      </div>
+                                   </div>
+                                </a>
+                                <ul class="dropdown-menu newclass sub scrollbar" id="style-2"
+                                aria-labelledby="navbarDropdown">
+                                <div class="force-overflow">
+                                   <li *ngFor = "let items of subcategory">
+                                      <img src="{{items.profilePic}}"
+                                         class="w-100">
+                                      <div class="title_namess">
+                                         <p>{{items.name}}</p>
+                                      </div>
+                                   </li>
+  
+                                   <!-- <li>
+                                      <img src="https://argueds3.s3.amazonaws.com/subcategory/1595998425731.PNG"
+                                         class="w-100">
+                                      <div class="title_namess">
+                                         <p>Sub title 2</p>
+                                      </div>
+                                   </li> -->
+  
+                                </div>
+                             </ul>
+                             </li>
                          
                         <!-- <li class="dropdown">
                             <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,5 +113,3 @@
     <img src="assets/img/video.png" class="w-100">
     <img src="assets/img/video.png" class="w-100">
  </div>
-
- 

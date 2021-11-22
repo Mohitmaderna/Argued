@@ -13,7 +13,7 @@ export class ApiServices {
     }
 
     get(path: string, params: HttpParams = new HttpParams()) {
-        return this.http.get(`${this.API}${path}`)
+        return this.http.get(`${this.API}${path}` , {params})
     }
 
 }

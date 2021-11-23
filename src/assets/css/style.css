@@ -678,41 +678,40 @@ a.site-logos img {
 }
 
 
+@media (max-width: 767px) {
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #111;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+    }
+
+    .openbtn:hover {
+        background-color: #444;
+    }
+      
+}
+
 
 .openbtn {
-
   font-size: 20px;
-
   cursor: pointer;
-
   background-color: #111;
-
   color: white;
-
   padding: 10px 15px;
-
   border: none;
-
 }
-
-
 
 .openbtn:hover {
-
   background-color: #444;
-
 }
-
-
 
 #main {
-
   transition: margin-left .5s;
-
   padding: 25px 10px 0;
-
 }
-
 
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -1627,6 +1626,12 @@ header .show img {
 
 }
 
+@media (max-width: 767px) {
+    .openbtn {
+        display: block !important;
+    }
+}
+
 .openbtn {
 
     display: block !important;
@@ -1638,6 +1643,15 @@ header .show img {
     display: none;
 
 }*/
+
+@media (max-width: 767px) {
+    .openbtn {
+
+        position: fixed;
+        top: 50%;
+    
+    }
+}
 
 .openbtn {
 

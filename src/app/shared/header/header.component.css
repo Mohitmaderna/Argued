@@ -1,0 +1,17 @@
+.mobile_btn_hemur, .mobile_body_show {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .mobile_btn_hemur, .mobile_body_show{
+        display: block;
+    }
+    .desktop_btn_hemur {
+        display: none;
+    }
+    ul.dropdown-menu.lft-mnu.mobile_body_show {
+        min-width: 250px !important;
+        margin: 5px 0px 0px -25px !important;
+        padding: 0px !important;
+    }
+}

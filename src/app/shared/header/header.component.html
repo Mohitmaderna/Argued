@@ -1,4 +1,4 @@
-<div class="loader"></div>
+
 <div class="btn_fixed">
    <p>Topics </p>
    <img src="assets/img/next.png" alt="">
@@ -12,16 +12,31 @@
                   <div class="container">
                      <div class="row">
                         <nav class="navbar navbar-light navbar-expand-lg mainmenu">
-                           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                           <button class="navbar-toggler desktop_btn_hemur" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                            <span class="fa fa-bars" aria-hidden="true"></span>
                            </button> 
+                           <button class="navbar-toggler mobile_btn_hemur" id="mobile_btn_hemur" type="button">
+                           <span class="fa fa-bars" aria-hidden="true"></span>
+                           </button> 
+                           
+                           <ul class="dropdown-menu lft-mnu mobile_body_show" style="display: none;" id="mobile_body_show">
+                              <li class="dropdown">
+                                 <a href="">Viewers</a>
+                              </li>
+                              <li class="dropdown">
+                                 <a href="">Presenters</a>
+                              </li>
+                              <li class="dropdown">
+                                 <a href="">Help Us Help You</a>
+                              </li>
+                           </ul>
                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                               <ul class="navbar-nav mr-auto">
                                  <li class="dropdown">
-                                    <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <button class="openbtn" onclick="openNav()">☰</button> 
                                     </a>
-                                    <ul class="dropdown-menu  lft-mnu" aria-labelledby="navbarDropdown">
+                                    <ul class="dropdown-menu lft-mnu desktop_body_show" aria-labelledby="navbarDropdown">
                                        <li class="dropdown">
                                           <a href="">Viewers</a>
                                        </li>
@@ -40,7 +55,7 @@
                   </div>
                </div>
             </div>
-            <a class="site-logos" href="index.php">
+            <a class="site-logos">
                <img src="assets/img/logo.png" alt="">
                <p>Civil argument shapes the world we live in!</p>
             </a>

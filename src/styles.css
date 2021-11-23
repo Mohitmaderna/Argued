@@ -1,13 +1,5 @@
-/* You can add global styles to this file, and also import other style files
-.sub, .subsub {
-    display:none;
-    }
-    .loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url('Ripple-1s-200px.gif') 50% 50% no-repeat rgb(249,249,249);
-    } */
+  /* You can add global styles to this file, and also import other style files */
+
+.navbar-collapse ul .dropdown-menu li:hover .newclass.sub {
+   display: block !important;
+}

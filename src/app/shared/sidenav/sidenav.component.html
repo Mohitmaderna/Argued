@@ -1,108 +1,67 @@
 <div class="loader"></div>
-
 <div class="home_background">
-    <div class="container-fluid">
-       <div class="row">
-          <div class="col-lg-3 col-md-3" style="background: #121212;">
-             <div class="navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto ">
-                   <li class="dropdown ajaxClass">
-                      <ul class="dropdown-menu top scrollbar" id="style-2"  aria-labelledby="navbarDropdown" style="overflow-y: Scroll !important; overflow-x: hidden;height: 100vh;display:block;">
-                         <div class="force-overflow">
-                          
-                            <li class="dropdown" *ngFor="let pics of catagories" (click) = "getAllsubcategories($event)">
-                                <a class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="false">
-                                   <div class="" bis_skin_checked="1">
-                                      <img src="{{pics.profilePic}}" class="">
-                                      <div class="title_name">
-                                         <p>{{pics.name}}</p>
-                                      </div>
-                                   </div>
-                                </a>
-                                <ul class="dropdown-menu newclass sub scrollbar" id="style-2"
-                                aria-labelledby="navbarDropdown">
-                                <div class="force-overflow">
-                                   <li *ngFor = "let items of subcategory">
-                                      <img src="{{items.profilePic}}"
-                                         class="w-100">
-                                      <div class="title_namess">
-                                         <p>{{items.name}}</p>
-                                      </div>
-                                   </li>
-  
-                                   <!-- <li>
-                                      <img src="https://argueds3.s3.amazonaws.com/subcategory/1595998425731.PNG"
-                                         class="w-100">
-                                      <div class="title_namess">
-                                         <p>Sub title 2</p>
-                                      </div>
-                                   </li> -->
-  
-                                </div>
-                             </ul>
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-lg-3 col-md-3" style="background: #121212;">
+            <div class="navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto ">
+                  <li class="dropdown ajaxClass">
+                     <ul class="dropdown-menu top scrollbar" id="style-2" aria-labelledby="navbarDropdown" style="overflow-y: Scroll !important; overflow-x: hidden;height: 100vh;display:block;">
+                        <div class="force-overflow">
+                           <div class="d-flex justify-content-center" *ngIf="loading">
+                              <div class="spinner-border" role="status">
+                                 <span class="sr-only" id="loading"></span>
+                              </div>
+                           </div>
+                              <li class="dropdown" *ngFor="let pics of catagories; let i = index;" (mouseover) = "getAllsubcategories(pics._id)">
+                                 <a class="dropdown-toggle" [id]="pics._id" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="" bis_skin_checked="1">
+                                       <img style="width: 100%;" src="{{pics.profilePic}}" class="">
+                                       <div class="title_name">
+                                          <p>{{pics.name}}</p>
+                                       </div>
+                                    </div>
+                                 </a> 
+                                 <ul class="dropdown-menu newclass sub scrollbar" id="style-2" aria-labelledby="catagories._id">
+                                    <div class="force-overflow">
+                                       <li *ngFor="let items of subcategory">
+                                          <img style="width: 100%;" src="{{items.profilePic}}" class="w-100">
+                                          <div class="title_namess">
+                                             <p>{{items.name}}</p>
+                                          </div>
+                                       </li>
+                                    </div>
+                                 </ul>
                              </li>
-                         
-                        <!-- <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               <div class="" bis_skin_checked="1">
-                                  <img src="https://argueds3.s3.amazonaws.com/subcategory/1595998425731.PNG" class="">
-                                  <div class="title_name">
-                                     <p>Title 2</p>
-                                  </div>
-                               </div>
-                            </a>
-                            <ul class="dropdown-menu newclass sub scrollbar" id="style-2" aria-labelledby="navbarDropdown">
-                               <div class="force-overflow">
-                                
-                                 
-                               <li>
-                                  <img src="https://argueds3.s3.amazonaws.com/category/1595991859814.PNG" class="w-100">
-                                  <div class="title_namess">
-                                     <p>Sub title 3</p>
-                                  </div>
-                               </li>
-                               
-                               <li>
-                                  <img src="https://argueds3.s3.amazonaws.com/category/1595991859814.PNG" class="w-100">
-                                  <div class="title_namess">
-                                     <p>Sub title 4</p>
-                                  </div>
-                               </li>
-                             
-                            </div>
-                            </ul>
-                        </li> -->
                          </div>
                       </ul>
                    </li>
                 </ul>
              </div>
           </div>
-          <div class="col-lg-9 col-md-12" style="background: #212020;">
-             <h2 style="color: #fff;" class="mt-2">Latest Videos</h2>
-             <div class="row">
-                <div class="col-lg-4 mt-4">
-                   <img src="assets/img/video.png" class="w-100">
-                </div>
-                <div class="col-lg-4 mt-4">
-                   <img src="assets/img/video2.png" class="w-100">
-                </div>
-                <div class="col-lg-4 mt-4">
-                   <img src="assets/img/video.png" class="w-100">
-                </div>
-                <div class="col-lg-4 mt-4">
-                   <img src="assets/img/video2.png" class="w-100">
-                </div>
-                <div class="col-lg-4 mt-4">
-                   <img src="assets/img/video.png" class="w-100">
-                </div>
-                <div class="col-lg-4 mt-4">
-                   <img src="assets/img/video.png" class="w-100">
-                </div>
-               
-             </div>
-          </div>
+         <div class="col-lg-9 col-md-12" style="background: #212020;">
+            <h2 style="color: #fff;" class="mt-2">Latest Videos</h2>
+            <div class="row">
+               <div class="col-lg-4 mt-4">
+                  <img src="assets/img/video.png" class="w-100">
+               </div>
+               <div class="col-lg-4 mt-4">
+                  <img src="assets/img/video2.png" class="w-100">
+               </div>
+               <div class="col-lg-4 mt-4">
+                  <img src="assets/img/video.png" class="w-100">
+               </div>
+               <div class="col-lg-4 mt-4">
+                  <img src="assets/img/video2.png" class="w-100">
+               </div>
+               <div class="col-lg-4 mt-4">
+                  <img src="assets/img/video.png" class="w-100">
+               </div>
+               <div class="col-lg-4 mt-4">
+                  <img src="assets/img/video.png" class="w-100">
+               </div>
+            </div>
+         </div>
        </div>
     </div>
  </div>
